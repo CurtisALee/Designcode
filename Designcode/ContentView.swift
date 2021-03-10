@@ -11,6 +11,8 @@ struct ContentView: View {
     @State var show = false // show variable has a state of false to begin with
     @State var viewState = CGSize.zero
     @State var showCard = false
+    @State var bottomState = CGSize.zero // bottom card height set to 0 (bottom position) to begin with
+    @State var showFull = false
     
     var body: some View {
         ZStack {
@@ -66,24 +68,54 @@ struct ContentView: View {
                 .offset(y: showCard ? -100 : 0)
                 .blendMode(.hardLight)
                 .animation(.spring(response: 0.3, dampingFraction: 0.6, blendDuration: 0))
-                .onTapGesture {
-                    self.showCard.toggle()
-                } // self references a variable set in the ContentView
-                .gesture(
-                    DragGesture().onChanged { value in
-                        self.viewState = value.translation
-                        self.show = true // Opens / shows the card stack on drag
-                    }
-                    .onEnded { value in
-                        self.viewState = .zero // Sets the position back to 0
-                        self.show = false // Returns show to false when drag ends
-                    }
-                )
+            .onTapGesture {
+                self.showCard.toggle()
+            } // self references a variable set in the ContentView
+            .gesture(
+                DragGesture().onChanged { value in
+                    self.viewState = value.translation
+                    self.show = true // Opens / shows the card stack on drag
+                }
+                .onEnded { value in
+                    self.viewState = .zero // Sets the position back to 0
+                    self.show = false // Returns show to false when drag ends
+                }
+            )
+            
+//            Text("\(bottomState.height)").offset(y: -300)
             
             BottomCardView()
                 .offset(x: 0, y: showCard ? 360 : 1000)
+                .offset(y: bottomState.height)
                 .blur(radius: show ? 20 : 0)
                 .animation(.timingCurve(0.2, 0.8, 0.2, 1, duration: 0.8))
+            .gesture(
+                DragGesture().onChanged { value in
+                    self.bottomState = value.translation
+                    if self.showFull {
+                        self.bottomState.height += -300
+                    }
+                    // Prevent bottomCard from moving beyond -300
+                    if self.bottomState.height < -300 {
+                        self.bottomState.height = -300
+                    }
+                }
+                .onEnded { value in
+                    if self.bottomState.height > 50 {
+                        self.showCard = false // If the bottomCard's drag position is more than 50, the showCard state should uncollapse and return to false
+                    }
+                    
+                    // Height should be less than -100, but showFull(-300) should also be false (height more than -300)
+                    // Or, instead of returning showFull to false if above -300, if bottomState is still above -250, keep showFull as true
+                    if (self.bottomState.height < -100 && !self.showFull) || (self.bottomState.height < -250 && self.showFull) {
+                        self.bottomState.height = -300
+                        self.showFull = true
+                    } else {
+                        self.bottomState = .zero // If above condition isn't met, return to start height / position
+                        self.showFull = false
+                    }
+                }
+            )
         }
     }
 }
