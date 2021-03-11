@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Home: View {
-    @State var showProfile = false // Set to 1000 by default
+    @State var showProfile = false
     @State var viewState = CGSize.zero
     
     var body: some View {
