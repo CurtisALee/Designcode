@@ -53,7 +53,9 @@ struct HomeView: View {
                     }
                     // The GeometryReader is great for detecting the position and size of your view.
                     // To get the X position, we can use the minX value from the frame. Think of the geometry as a box where minX is the starting left position and maxX as the ending right position.
-                    // The minX position will change as you scroll. Using this dynamic value, we'll apply to the degrees of a 3D rotation effect. Note that it's important to convert our value to a Double. Also, since the X value changes too rapidly, we can divide that by 20. Finally, we'll need an offset of 30 because of our padding.
+                    // The minX position will change as you scroll. Using this dynamic value, we'll apply to the degrees of a 3D rotation effect.
+                    // Note that it's important to convert our value to a Double. Also, since the X value changes too rapidly, we can divide that by 20.
+                    // Finally, we'll need an offset of 30 because of our padding.
                 }
                 .padding(30)
                 .padding(.bottom, 30)
