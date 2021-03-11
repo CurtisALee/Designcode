@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @Binding var showProfile: Bool
+    @State var showUpdate = false
     
     var body: some View {
         VStack {
@@ -20,18 +21,39 @@ struct HomeView: View {
                 
                 // The shared value is then called here having been declared at the component level (see Home.swift file)
                 AvatarView(showProfile: $showProfile)
+                
+                Button(action: { self.showUpdate.toggle() }) {
+                    Image(systemName: "bell")
+                        .renderingMode(.original)
+                        .font(.system(size: 16, weight: .medium))
+                        .frame(width: 36, height: 36)
+                        .background(Color.white)
+                        .clipShape(Circle())
+                        .shadow(color: Color.black.opacity(0.1), radius: 1, x: 0, y: 1)
+                        .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 10)
+                }
+                .sheet(isPresented: $showUpdate) {
+                    ContentView()
+                }
             }
             .padding(.horizontal)
             .padding(.leading, 14)
             .padding(.top, 30)
             
-            // Rather than hardcode the number of items in the loop, we can instead call the sectionData variable from the array, and let the loop figure out how many iterations we're passing it (which in this case in 3)
-            
+            // Rather than hardcode the number of items in the loop, we can instead call the sectionData variable from the array
+            // This will let the loop figure out how many iterations we're passing it (which in this case is 3)
             ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 30) {
+                HStack(spacing: 20) {
                     ForEach(sectionData) { item in
-                        SectionView(section: item)
+                        GeometryReader { geometry in
+                            SectionView(section: item)
+                                .rotation3DEffect(Angle(degrees: Double(geometry.frame(in: .global).minX - 30) / -20), axis: (x: 0, y: 10, z: 0))
+                        }
+                        .frame(width: 275, height: 275)
                     }
+                    // The GeometryReader is great for detecting the position and size of your view.
+                    // To get the X position, we can use the minX value from the frame. Think of the geometry as a box where minX is the starting left position and maxX as the ending right position.
+                    // The minX position will change as you scroll. Using this dynamic value, we'll apply to the degrees of a 3D rotation effect. Note that it's important to convert our value to a Double. Also, since the X value changes too rapidly, we can divide that by 20. Finally, we'll need an offset of 30 because of our padding.
                 }
                 .padding(30)
                 .padding(.bottom, 30)
