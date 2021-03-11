@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0F6A4A1225FA167300181265 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6A4A1125FA167300181265 /* MenuView.swift */; };
+		0F6A4A1525FA206B00181265 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6A4A1425FA206B00181265 /* Home.swift */; };
+		0F6A4A1825FA2AA700181265 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6A4A1725FA2AA700181265 /* HomeView.swift */; };
 		0F7F488D25F8D018008440B7 /* DesigncodeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7F488C25F8D018008440B7 /* DesigncodeApp.swift */; };
 		0F7F488F25F8D018008440B7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7F488E25F8D018008440B7 /* ContentView.swift */; };
 		0F7F489125F8D018008440B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F7F489025F8D018008440B7 /* Assets.xcassets */; };
@@ -16,6 +18,8 @@
 
 /* Begin PBXFileReference section */
 		0F6A4A1125FA167300181265 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		0F6A4A1425FA206B00181265 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		0F6A4A1725FA2AA700181265 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		0F7F488925F8D018008440B7 /* Designcode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Designcode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F7F488C25F8D018008440B7 /* DesigncodeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesigncodeApp.swift; sourceTree = "<group>"; };
 		0F7F488E25F8D018008440B7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +61,8 @@
 				0F7F488C25F8D018008440B7 /* DesigncodeApp.swift */,
 				0F7F488E25F8D018008440B7 /* ContentView.swift */,
 				0F6A4A1125FA167300181265 /* MenuView.swift */,
+				0F6A4A1425FA206B00181265 /* Home.swift */,
+				0F6A4A1725FA2AA700181265 /* HomeView.swift */,
 				0F7F489025F8D018008440B7 /* Assets.xcassets */,
 				0F7F489525F8D018008440B7 /* Info.plist */,
 				0F7F489225F8D018008440B7 /* Preview Content */,
@@ -143,6 +149,8 @@
 			files = (
 				0F7F488F25F8D018008440B7 /* ContentView.swift in Sources */,
 				0F6A4A1225FA167300181265 /* MenuView.swift in Sources */,
+				0F6A4A1525FA206B00181265 /* Home.swift in Sources */,
+				0F6A4A1825FA2AA700181265 /* HomeView.swift in Sources */,
 				0F7F488D25F8D018008440B7 /* DesigncodeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
