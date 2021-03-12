@@ -18,6 +18,7 @@
 		0FB877D525FB6B5B005066FA /* UpdateDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB877D425FB6B5B005066FA /* UpdateDetail.swift */; };
 		0FB877D825FB75BC005066FA /* UpdateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB877D725FB75BC005066FA /* UpdateStore.swift */; };
 		0FD2F36A25FB8532000E31E2 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD2F36925FB8532000E31E2 /* TabBar.swift */; };
+		0FD2F36D25FBA2A0000E31E2 /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD2F36C25FBA2A0000E31E2 /* RingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		0FB877D425FB6B5B005066FA /* UpdateDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDetail.swift; sourceTree = "<group>"; };
 		0FB877D725FB75BC005066FA /* UpdateStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateStore.swift; sourceTree = "<group>"; };
 		0FD2F36925FB8532000E31E2 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		0FD2F36C25FBA2A0000E31E2 /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 			children = (
 				0F7F488C25F8D018008440B7 /* DesigncodeApp.swift */,
 				0F7F488E25F8D018008440B7 /* ContentView.swift */,
+				0FD2F36C25FBA2A0000E31E2 /* RingView.swift */,
 				0F6A4A1125FA167300181265 /* MenuView.swift */,
 				0F6A4A1425FA206B00181265 /* Home.swift */,
 				0F6A4A1725FA2AA700181265 /* HomeView.swift */,
@@ -159,6 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FD2F36D25FBA2A0000E31E2 /* RingView.swift in Sources */,
 				0FD2F36A25FB8532000E31E2 /* TabBar.swift in Sources */,
 				0FB877D525FB6B5B005066FA /* UpdateDetail.swift in Sources */,
 				0F7F488F25F8D018008440B7 /* ContentView.swift in Sources */,
