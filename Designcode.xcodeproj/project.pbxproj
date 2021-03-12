@@ -17,6 +17,7 @@
 		0F7F489425F8D018008440B7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F7F489325F8D018008440B7 /* Preview Assets.xcassets */; };
 		0FB877D525FB6B5B005066FA /* UpdateDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB877D425FB6B5B005066FA /* UpdateDetail.swift */; };
 		0FB877D825FB75BC005066FA /* UpdateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB877D725FB75BC005066FA /* UpdateStore.swift */; };
+		0FD2F36A25FB8532000E31E2 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD2F36925FB8532000E31E2 /* TabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		0F7F489525F8D018008440B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FB877D425FB6B5B005066FA /* UpdateDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDetail.swift; sourceTree = "<group>"; };
 		0FB877D725FB75BC005066FA /* UpdateStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateStore.swift; sourceTree = "<group>"; };
+		0FD2F36925FB8532000E31E2 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				0F6A4A1125FA167300181265 /* MenuView.swift */,
 				0F6A4A1425FA206B00181265 /* Home.swift */,
 				0F6A4A1725FA2AA700181265 /* HomeView.swift */,
+				0FD2F36925FB8532000E31E2 /* TabBar.swift */,
 				0F6A4A1A25FA66C300181265 /* UpdateList.swift */,
 				0FB877D725FB75BC005066FA /* UpdateStore.swift */,
 				0FB877D425FB6B5B005066FA /* UpdateDetail.swift */,
@@ -156,6 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FD2F36A25FB8532000E31E2 /* TabBar.swift in Sources */,
 				0FB877D525FB6B5B005066FA /* UpdateDetail.swift in Sources */,
 				0F7F488F25F8D018008440B7 /* ContentView.swift in Sources */,
 				0F6A4A1225FA167300181265 /* MenuView.swift in Sources */,
