@@ -8,39 +8,64 @@
 import SwiftUI
 
 struct UpdateList: View {
+    @ObservedObject var store = UpdateStore()
+    
+    func addUpdate() {
+        store.updates.append(Update(image: "Card1", title: "New item", text: "Text", date: "Jan 1"))
+    }
+    
     var body: some View {
         NavigationView {
-            // UpdateDetail() passes the 'update' item in the loop with the 'var update: Update = updateData[0]' in UpdateDetail.swift
-            List(updateData) { update in
-                NavigationLink(destination: UpdateDetail(update: update)) {
-                    HStack {
-                        Image(update.image)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 80, height: 80)
-                            .background(Color.black)
-                            .cornerRadius(20)
-                            .padding(.trailing, 4)
-                        
-                        VStack(alignment: .leading, spacing: 8.0) {
-                            Text(update.title)
-                                .font(.system(size: 20, weight: .bold))
+            // ForEach now passes 'store.updates' from the function
+            // Continues to loop through each update item in the array
+            // Will now also add the ability to append a new item to the bottom of the list
+            List {
+                ForEach(store.updates) { update in
+                    NavigationLink(destination: UpdateDetail(update: update)) {
+                        HStack {
+                            Image(update.image)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 80, height: 80)
+                                .background(Color.black)
+                                .cornerRadius(20)
+                                .padding(.trailing, 4)
                             
-                            Text(update.text)
-                                .lineLimit(2) // Limit text preview to 2 lines (Think line-clamp truncation in CSS
-                                .font(.subheadline)
-                                .foregroundColor(Color(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)))
-                            
-                            Text(update.date)
-                                .font(.caption)
-                                .fontWeight(.bold)
-                                .foregroundColor(.secondary) // Darkmode adaptive colour
+                            VStack(alignment: .leading, spacing: 8.0) {
+                                Text(update.title)
+                                    .font(.system(size: 20, weight: .bold))
+                                
+                                Text(update.text)
+                                    .lineLimit(2) // Limit text preview to 2 lines (Think line-clamp truncation in CSS
+                                    .font(.subheadline)
+                                    .foregroundColor(Color(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)))
+                                
+                                Text(update.date)
+                                    .font(.caption)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.secondary) // Darkmode adaptive colour
+                            }
                         }
+                        .padding(.vertical, 8)
                     }
-                    .padding(.vertical, 8)
+                }
+                // Pass a single value: index
+                // These events allow you to manage the items, such as delete and drag to reorder
+                .onDelete { index in
+                    self.store.updates.remove(at: index.first!)
+                }
+                // Can also pass multiple values in a parenthesis
+                // This allows us to move the item from the 'source' (Starting position in the list order)
+                // Then move to the 'destination', which is a whole number elsewhere in the list order ( 0 - n items)
+                .onMove { (source: IndexSet, destination: Int) in
+                    self.store.updates.move(fromOffsets: source, toOffset: destination)
                 }
             }
+            .listStyle(PlainListStyle())
             .navigationBarTitle(Text("Updates"))
+            .navigationBarItems(leading: Button(action: addUpdate) {
+                Text("Add Update")
+            }, trailing: EditButton())
         }
     }
 }

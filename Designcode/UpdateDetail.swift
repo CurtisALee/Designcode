@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct UpdateDetail: View {
-    // This var has a type of = to the data structure created in UpdateList.swift
+    // This var has a type = to the data structure created in UpdateList.swift
     // This is then = to the array of list properties
     var update: Update = updateData[0]
     
