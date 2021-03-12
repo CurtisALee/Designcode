@@ -10,8 +10,9 @@ import SwiftUI
 struct UpdateList: View {
     var body: some View {
         NavigationView {
+            // UpdateDetail() passes the 'update' item in the loop with the 'var update: Update = updateData[0]' in UpdateDetail.swift
             List(updateData) { update in
-                NavigationLink(destination: Text(update.text)) {
+                NavigationLink(destination: UpdateDetail(update: update)) {
                     HStack {
                         Image(update.image)
                             .resizable()

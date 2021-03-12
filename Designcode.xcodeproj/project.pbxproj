@@ -15,6 +15,7 @@
 		0F7F488F25F8D018008440B7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7F488E25F8D018008440B7 /* ContentView.swift */; };
 		0F7F489125F8D018008440B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F7F489025F8D018008440B7 /* Assets.xcassets */; };
 		0F7F489425F8D018008440B7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F7F489325F8D018008440B7 /* Preview Assets.xcassets */; };
+		0FB877D525FB6B5B005066FA /* UpdateDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB877D425FB6B5B005066FA /* UpdateDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		0F7F489025F8D018008440B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F7F489325F8D018008440B7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0F7F489525F8D018008440B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FB877D425FB6B5B005066FA /* UpdateDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				0F6A4A1425FA206B00181265 /* Home.swift */,
 				0F6A4A1725FA2AA700181265 /* HomeView.swift */,
 				0F6A4A1A25FA66C300181265 /* UpdateList.swift */,
+				0FB877D425FB6B5B005066FA /* UpdateDetail.swift */,
 				0F7F489025F8D018008440B7 /* Assets.xcassets */,
 				0F7F489525F8D018008440B7 /* Info.plist */,
 				0F7F489225F8D018008440B7 /* Preview Content */,
@@ -150,6 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FB877D525FB6B5B005066FA /* UpdateDetail.swift in Sources */,
 				0F7F488F25F8D018008440B7 /* ContentView.swift in Sources */,
 				0F6A4A1225FA167300181265 /* MenuView.swift in Sources */,
 				0F6A4A1B25FA66C300181265 /* UpdateList.swift in Sources */,
