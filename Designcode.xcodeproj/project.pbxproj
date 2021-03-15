@@ -30,6 +30,7 @@
 		0F470E6425FF657A0044A437 /* WorkSans-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F470E4E25FF657A0044A437 /* WorkSans-Italic-VariableFont_wght.ttf */; };
 		0F470E6525FF657A0044A437 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0F470E4F25FF657A0044A437 /* OFL.txt */; };
 		0F470E6625FF657A0044A437 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0F470E5025FF657A0044A437 /* README.txt */; };
+		0F470E6925FF7C050044A437 /* CourseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F470E6825FF7C050044A437 /* CourseList.swift */; };
 		0F6A4A1225FA167300181265 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6A4A1125FA167300181265 /* MenuView.swift */; };
 		0F6A4A1525FA206B00181265 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6A4A1425FA206B00181265 /* Home.swift */; };
 		0F6A4A1825FA2AA700181265 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6A4A1725FA2AA700181265 /* HomeView.swift */; };
@@ -68,6 +69,7 @@
 		0F470E4E25FF657A0044A437 /* WorkSans-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		0F470E4F25FF657A0044A437 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		0F470E5025FF657A0044A437 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		0F470E6825FF7C050044A437 /* CourseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseList.swift; sourceTree = "<group>"; };
 		0F6A4A1125FA167300181265 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		0F6A4A1425FA206B00181265 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		0F6A4A1725FA2AA700181265 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				0FD2F36C25FBA2A0000E31E2 /* RingView.swift */,
 				0F6A4A1125FA167300181265 /* MenuView.swift */,
 				0F6A4A1425FA206B00181265 /* Home.swift */,
+				0F470E6825FF7C050044A437 /* CourseList.swift */,
 				0F6A4A1725FA2AA700181265 /* HomeView.swift */,
 				0FD2F36925FB8532000E31E2 /* TabBar.swift */,
 				0F6A4A1A25FA66C300181265 /* UpdateList.swift */,
@@ -273,6 +276,7 @@
 				0F470E3725FF614F0044A437 /* Modifiers.swift in Sources */,
 				0FD2F36A25FB8532000E31E2 /* TabBar.swift in Sources */,
 				0FB877D525FB6B5B005066FA /* UpdateDetail.swift in Sources */,
+				0F470E6925FF7C050044A437 /* CourseList.swift in Sources */,
 				0F7F488F25F8D018008440B7 /* ContentView.swift in Sources */,
 				0F6A4A1225FA167300181265 /* MenuView.swift in Sources */,
 				0F6A4A1B25FA66C300181265 /* UpdateList.swift in Sources */,
