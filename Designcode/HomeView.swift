@@ -10,72 +10,91 @@ import SwiftUI
 struct HomeView: View {
     @Binding var showProfile: Bool
     @State var showUpdate = false
+    @Binding var showContent: Bool
     
     var body: some View {
-        VStack {
-            HStack {
-                Text("Watching")
-//                    .font(.system(size: 28, weight: .bold))
-                    .modifier(CustomFontModifier(size: 28))
+        ScrollView {
+            VStack {
+                HStack {
+                    Text("Watching")
+    //                    .font(.system(size: 28, weight: .bold))
+                        .modifier(CustomFontModifier(size: 28))
+                    
+                    Spacer()
+                    
+                    // The shared value is then called here having been declared at the component level (see Home.swift file)
+                    AvatarView(showProfile: $showProfile)
+                    
+                    Button(action: { self.showUpdate.toggle() }) {
+                        Image(systemName: "bell")
+                            .renderingMode(.original)
+                            .font(.system(size: 16, weight: .medium))
+                            .frame(width: 36, height: 36)
+                            .background(Color.white)
+                            .clipShape(Circle())
+                            .shadow(color: Color.black.opacity(0.1), radius: 1, x: 0, y: 1)
+                            .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 10)
+                    }
+                    .sheet(isPresented: $showUpdate) {
+                        UpdateList()
+                    }
+                }
+                .padding(.horizontal)
+                .padding(.leading, 14)
+                .padding(.top, 30)
+                
+                ScrollView(.horizontal, showsIndicators: false) {
+                    WatchRingsView()
+                        .padding(.horizontal, 30)
+                        .padding(.bottom, 30)
+                        .onTapGesture {
+                            self.showContent = true
+                        }
+                }
+                
+                // Rather than hardcode the number of items in the loop, we can instead call the sectionData variable from the array
+                // This will let the loop figure out how many iterations we're passing it (which in this case is 3)
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 20) {
+                        ForEach(sectionData) { item in
+                            GeometryReader { geometry in
+                                SectionView(section: item)
+                                    .rotation3DEffect(Angle(degrees: Double(geometry.frame(in: .global).minX - 30) / -20), axis: (x: 0, y: 10, z: 0))
+                            }
+                            .frame(width: 275, height: 275)
+                        }
+                        // The GeometryReader is great for detecting the position and size of your view.
+                        // To get the X position, we can use the minX value from the frame. Think of the geometry as a box where minX is the starting left position and maxX as the ending right position.
+                        // The minX position will change as you scroll. Using this dynamic value, we'll apply to the degrees of a 3D rotation effect.
+                        // Note that it's important to convert our value to a Double. Also, since the X value changes too rapidly, we can divide that by 20.
+                        // Finally, we'll need an offset of 30 because of our padding.
+                    }
+                    .padding(30)
+                    .padding(.bottom, 30)
+                }
+                .offset(y: -30)
+                
+                HStack {
+                    Text("Courses")
+                        .font(.title).bold()
+                    
+                    Spacer()
+                }
+                .padding(.leading, 30)
+                .offset(y: -60)
+                
+                SectionView(section: sectionData[2], width: screen.width - 60, height: 275)
+                    .offset(y: -60)
                 
                 Spacer()
-                
-                // The shared value is then called here having been declared at the component level (see Home.swift file)
-                AvatarView(showProfile: $showProfile)
-                
-                Button(action: { self.showUpdate.toggle() }) {
-                    Image(systemName: "bell")
-                        .renderingMode(.original)
-                        .font(.system(size: 16, weight: .medium))
-                        .frame(width: 36, height: 36)
-                        .background(Color.white)
-                        .clipShape(Circle())
-                        .shadow(color: Color.black.opacity(0.1), radius: 1, x: 0, y: 1)
-                        .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 10)
-                }
-                .sheet(isPresented: $showUpdate) {
-                    UpdateList()
-                }
             }
-            .padding(.horizontal)
-            .padding(.leading, 14)
-            .padding(.top, 30)
-            
-            ScrollView(.horizontal, showsIndicators: false) {
-                WatchRingsView()
-                    .padding(.horizontal, 30)
-                    .padding(.bottom, 30)
-            }
-            
-            // Rather than hardcode the number of items in the loop, we can instead call the sectionData variable from the array
-            // This will let the loop figure out how many iterations we're passing it (which in this case is 3)
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 20) {
-                    ForEach(sectionData) { item in
-                        GeometryReader { geometry in
-                            SectionView(section: item)
-                                .rotation3DEffect(Angle(degrees: Double(geometry.frame(in: .global).minX - 30) / -20), axis: (x: 0, y: 10, z: 0))
-                        }
-                        .frame(width: 275, height: 275)
-                    }
-                    // The GeometryReader is great for detecting the position and size of your view.
-                    // To get the X position, we can use the minX value from the frame. Think of the geometry as a box where minX is the starting left position and maxX as the ending right position.
-                    // The minX position will change as you scroll. Using this dynamic value, we'll apply to the degrees of a 3D rotation effect.
-                    // Note that it's important to convert our value to a Double. Also, since the X value changes too rapidly, we can divide that by 20.
-                    // Finally, we'll need an offset of 30 because of our padding.
-                }
-                .padding(30)
-                .padding(.bottom, 30)
-            }
-            
-            Spacer()
         }
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(showProfile: .constant(false)) // This prevents the need to declare a state if there is no state present in the current view (see Home.swift file)
+        HomeView(showProfile: .constant(false), showContent: .constant(false)) // This prevents the need to declare a state if there is no state present in the current view (see Home.swift file)
     }
 }
 
@@ -83,6 +102,8 @@ struct SectionView: View {
     
     // Create a new variable with the value being the data structure defined at the bottom
     var section: Section
+    var width: CGFloat = 275
+    var height: CGFloat = 275
     
     var body: some View {
         VStack {
@@ -107,7 +128,7 @@ struct SectionView: View {
         }
         .padding(.top, 20)
         .padding(.horizontal, 20)
-        .frame(width: 275, height: 275)
+        .frame(width: width, height: height)
         .background(section.color)
         .cornerRadius(30)
         .shadow(color: section.color.opacity(0.3), radius: 20, x: 0, y: 20)
