@@ -130,7 +130,6 @@ struct CourseView: View {
             .background(Color(course.color))
             .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
             .shadow(color: Color(course.color).opacity(0.3), radius: 20, x: 0, y:20)
-            .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))
             .onTapGesture {
                 self.show.toggle()
                 self.active.toggle()
@@ -140,10 +139,16 @@ struct CourseView: View {
                     self.activeIndex = -1
                 }
             }
+            
+            if show {
+                CourseDetail(course: course, show: $show, active: $active, activeIndex: $activeIndex)
+                    .background(Color.white)
+                    .animation(nil)
+            }
         }
         .frame(height: show ? screen.height : 280)
         .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))
-        .ignoresSafeArea(.all)
+        .edgesIgnoringSafeArea(.all)
     }
 }
 
