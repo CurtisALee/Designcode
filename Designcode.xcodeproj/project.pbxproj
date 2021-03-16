@@ -40,6 +40,9 @@
 		0F7F489125F8D018008440B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F7F489025F8D018008440B7 /* Assets.xcassets */; };
 		0F7F489425F8D018008440B7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F7F489325F8D018008440B7 /* Preview Assets.xcassets */; };
 		0F8B93432600BEA4009E8932 /* CourseDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8B93422600BEA4009E8932 /* CourseDetail.swift */; };
+		0F979D0E2600EABD002FF893 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F979D0D2600EABD002FF893 /* DataStore.swift */; };
+		0FAA0A182600C94B0055010A /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAA0A172600C94B0055010A /* Data.swift */; };
+		0FAA0A1B2600CB620055010A /* PostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAA0A1A2600CB620055010A /* PostList.swift */; };
 		0FB877D525FB6B5B005066FA /* UpdateDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB877D425FB6B5B005066FA /* UpdateDetail.swift */; };
 		0FB877D825FB75BC005066FA /* UpdateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB877D725FB75BC005066FA /* UpdateStore.swift */; };
 		0FD2F36A25FB8532000E31E2 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD2F36925FB8532000E31E2 /* TabBar.swift */; };
@@ -82,6 +85,9 @@
 		0F7F489325F8D018008440B7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0F7F489525F8D018008440B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F8B93422600BEA4009E8932 /* CourseDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetail.swift; sourceTree = "<group>"; };
+		0F979D0D2600EABD002FF893 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		0FAA0A172600C94B0055010A /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		0FAA0A1A2600CB620055010A /* PostList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostList.swift; sourceTree = "<group>"; };
 		0FB877D425FB6B5B005066FA /* UpdateDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDetail.swift; sourceTree = "<group>"; };
 		0FB877D725FB75BC005066FA /* UpdateStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateStore.swift; sourceTree = "<group>"; };
 		0FD2F36925FB8532000E31E2 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
@@ -162,6 +168,9 @@
 				0F6A4A1125FA167300181265 /* MenuView.swift */,
 				0F6A4A1425FA206B00181265 /* Home.swift */,
 				0F470E6825FF7C050044A437 /* CourseList.swift */,
+				0FAA0A172600C94B0055010A /* Data.swift */,
+				0FAA0A1A2600CB620055010A /* PostList.swift */,
+				0F979D0D2600EABD002FF893 /* DataStore.swift */,
 				0F8B93422600BEA4009E8932 /* CourseDetail.swift */,
 				0F6A4A1725FA2AA700181265 /* HomeView.swift */,
 				0FD2F36925FB8532000E31E2 /* TabBar.swift */,
@@ -276,12 +285,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FD2F36D25FBA2A0000E31E2 /* RingView.swift in Sources */,
+				0F979D0E2600EABD002FF893 /* DataStore.swift in Sources */,
+				0FAA0A1B2600CB620055010A /* PostList.swift in Sources */,
 				0F470E3725FF614F0044A437 /* Modifiers.swift in Sources */,
 				0FD2F36A25FB8532000E31E2 /* TabBar.swift in Sources */,
 				0FB877D525FB6B5B005066FA /* UpdateDetail.swift in Sources */,
 				0F470E6925FF7C050044A437 /* CourseList.swift in Sources */,
 				0F7F488F25F8D018008440B7 /* ContentView.swift in Sources */,
 				0F6A4A1225FA167300181265 /* MenuView.swift in Sources */,
+				0FAA0A182600C94B0055010A /* Data.swift in Sources */,
 				0F6A4A1B25FA66C300181265 /* UpdateList.swift in Sources */,
 				0FB877D825FB75BC005066FA /* UpdateStore.swift in Sources */,
 				0F6A4A1525FA206B00181265 /* Home.swift in Sources */,
